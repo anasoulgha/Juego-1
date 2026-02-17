@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://2wqqv7b7bbpg"]
+
+[ext_resource type="AudioStream" uid="uid://dxrgdbqifjl5u" path="res://menu/naruto.mp3" id="1_g18jx"]
+[ext_resource type="Script" uid="uid://cwryuc7owpcbl" path="res://menu/menu.gd" id="1_pbjm4"]
+[ext_resource type="Texture2D" uid="uid://ihn2d0h8q53a" path="res://menu/fondo.jpg" id="2_6nwqt"]
+[ext_resource type="FontFile" uid="uid://bbm1v6qhpc3qw" path="res://menu/fuente.otf" id="4_svuvw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_juveg"]
+font = ExtResource("4_svuvw")
+font_size = 100
+outline_size = 20
+outline_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+
+[node name="menu" type="Control" unique_id=1071998618]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbjm4")
+
+[node name="audio_menu" type="AudioStreamPlayer2D" parent="." unique_id=909307266]
+stream = ExtResource("1_g18jx")
+autoplay = true
+parameters/looping = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=337990261]
+position = Vector2(577.00006, 325)
+scale = Vector2(1.0537038, 0.84567493)
+texture = ExtResource("2_6nwqt")
+
+[node name="vbox_menu" type="VBoxContainer" parent="." unique_id=1765637019]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 507.0
+offset_right = 360.0
+offset_bottom = 617.0
+
+[node name="lbl_opciones" type="Label" parent="vbox_menu" unique_id=1771481003]
+layout_mode = 2
+text = "Opciones:"
+
+[node name="btn_start" type="Button" parent="vbox_menu" unique_id=1624836675]
+layout_mode = 2
+text = "Start"
+
+[node name="btn_exit" type="Button" parent="vbox_menu" unique_id=1644451465]
+layout_mode = 2
+text = "Exit"
+
+[node name="lbl_narute" type="Label" parent="." unique_id=922014491]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 374.0
+offset_right = 320.0
+offset_bottom = 505.0
+text = "Narute"
+label_settings = SubResource("LabelSettings_juveg")
+
+[connection signal="pressed" from="vbox_menu/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="vbox_menu/btn_exit" to="." method="_on_btn_end_pressed"]

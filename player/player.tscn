@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cghyhe3usmepk"]
 
+[ext_resource type="Script" uid="uid://b3pfnch453u0v" path="res://player/player.gd" id="1_2uvqg"]
 [ext_resource type="Texture2D" uid="uid://civph1cbg763a" path="res://player/img/Idle__000.png" id="1_b8hi5"]
 [ext_resource type="Texture2D" uid="uid://da8t8jebihtqi" path="res://player/img/Idle__001.png" id="2_2uvqg"]
 [ext_resource type="Texture2D" uid="uid://jvv4jkix2sol" path="res://player/img/Idle__002.png" id="3_1s1yo"]
@@ -149,6 +150,7 @@ size = Vector2(259, 436)
 
 [node name="player" type="CharacterBody2D" unique_id=256829301]
 scale = Vector2(0.25, 0.25)
+script = ExtResource("1_2uvqg")
 metadata/_edit_group_ = true
 
 [node name="ani_player" type="AnimatedSprite2D" parent="." unique_id=1323228171]
@@ -160,3 +162,5 @@ animation = &"idle"
 [node name="col_player" type="CollisionShape2D" parent="." unique_id=841163505]
 position = Vector2(13.5, 30)
 shape = SubResource("RectangleShape2D_xry5e")
+
+[node name="cam_player" type="Camera2D" parent="." unique_id=1510237096]
