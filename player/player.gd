@@ -8,7 +8,8 @@ extends CharacterBody2D
 @export var air_acceleration = 2000
 @export var air_friction = 450
 
-
+# Referencia al contador
+@onready var contador: Control = $CanvasLayer/Contador
 # Contador de monedas
 var monedas: int = 0
 
@@ -63,8 +64,10 @@ func _physics_process(delta: float) -> void:
 # Agregamos al player al grupo de jugadores
 func _ready() -> void:
 	add_to_group("jugadores")
+	contador.actualizar(0)
 
 
-# Agrega una moneda al contador del jugador
+
 func add_moneda():
 	monedas+=1
+	contador.actualizar(monedas)
