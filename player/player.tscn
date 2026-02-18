@@ -142,7 +142,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 24.0
+"speed": 18.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xry5e"]
@@ -157,10 +157,14 @@ metadata/_edit_group_ = true
 position = Vector2(12.5, 29.5)
 scale = Vector2(0.9137931, 0.882)
 sprite_frames = SubResource("SpriteFrames_l3lcn")
-animation = &"idle"
+animation = &"run"
 
 [node name="col_player" type="CollisionShape2D" parent="." unique_id=841163505]
 position = Vector2(13.5, 30)
 shape = SubResource("RectangleShape2D_xry5e")
 
 [node name="cam_player" type="Camera2D" parent="." unique_id=1510237096]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_bottom = 648
+limit_smoothed = true

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cadia23v4evvu"]
+
+[ext_resource type="Texture2D" uid="uid://x4gd4qohcp5i" path="res://fondo/img/layer8.PNG" id="1_og34b"]
+[ext_resource type="Texture2D" uid="uid://bf2lyb7qfup02" path="res://fondo/img/layer6.PNG" id="2_048j0"]
+[ext_resource type="Texture2D" uid="uid://d3xjuedparw6s" path="res://fondo/img/layer0.PNG" id="3_s7ydw"]
+
+[node name="Fondo" type="ParallaxBackground" unique_id=1462426255]
+
+[node name="layer_fondo" type="ParallaxLayer" parent="." unique_id=822853200]
+position = Vector2(-8, -4)
+motion_scale = Vector2(0.1, 1)
+
+[node name="sprt_fondo" type="Sprite2D" parent="layer_fondo" unique_id=1165915445]
+position = Vector2(584, 329)
+scale = Vector2(1.8093749, 1.7944444)
+texture = ExtResource("1_og34b")
+
+[node name="layer_medio" type="ParallaxLayer" parent="." unique_id=2049726877]
+motion_scale = Vector2(0.2, 1)
+
+[node name="sprt_medio" type="Sprite2D" parent="layer_medio" unique_id=1969614522]
+position = Vector2(569, 626)
+scale = Vector2(1.8015625, 1)
+texture = ExtResource("2_048j0")
+
+[node name="layer_primerplano" type="ParallaxLayer" parent="." unique_id=1282072834]
+motion_scale = Vector2(0.3, 1)
+
+[node name="sprt_primer_plano" type="Sprite2D" parent="layer_primerplano" unique_id=1166168466]
+position = Vector2(575, 466.99997)
+scale = Vector2(1.8125, 1.0222223)
+texture = ExtResource("3_s7ydw")
