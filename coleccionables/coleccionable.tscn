@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://p2dhk7km8u7r"]
+
+[ext_resource type="Script" uid="uid://b6fq2ejqs7a27" path="res://coleccionables/coleccionable.gd" id="1_0dx22"]
+[ext_resource type="Texture2D" uid="uid://c38l52on4mqm8" path="res://coleccionables/img/Bronze_1.png" id="1_nxjuh"]
+[ext_resource type="Texture2D" uid="uid://caeuo08ajn3ts" path="res://coleccionables/img/Bronze_2.png" id="2_0dx22"]
+[ext_resource type="Texture2D" uid="uid://ck1cmdmmkjj" path="res://coleccionables/img/Bronze_3.png" id="3_ay7hy"]
+[ext_resource type="Texture2D" uid="uid://c4kt1dhpwqmba" path="res://coleccionables/img/Bronze_4.png" id="4_6pmee"]
+[ext_resource type="Texture2D" uid="uid://cxy34pjshe50j" path="res://coleccionables/img/Bronze_5.png" id="5_uyb45"]
+[ext_resource type="Texture2D" uid="uid://bv32jynxpswtj" path="res://coleccionables/img/Bronze_6.png" id="6_wpcen"]
+[ext_resource type="Texture2D" uid="uid://qkexvifwvrty" path="res://coleccionables/img/Bronze_7.png" id="7_pmabd"]
+[ext_resource type="Texture2D" uid="uid://cogocexmqwquw" path="res://coleccionables/img/Bronze_8.png" id="8_jwrbr"]
+[ext_resource type="Texture2D" uid="uid://jmipt5xf38rk" path="res://coleccionables/img/Bronze_9.png" id="9_mboxf"]
+[ext_resource type="Texture2D" uid="uid://bywvp6fkmfols" path="res://coleccionables/img/Bronze_10.png" id="10_ff3jx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xge0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nxjuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0dx22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ay7hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6pmee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uyb45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wpcen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pmabd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jwrbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mboxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ff3jx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvwm7"]
+radius = 28.442924
+
+[node name="Coleccionable" type="Area2D" unique_id=844228677]
+script = ExtResource("1_0dx22")
+
+[node name="ani_moneda" type="AnimatedSprite2D" parent="." unique_id=237854694]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_6xge0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=130206092]
+shape = SubResource("CircleShape2D_rvwm7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

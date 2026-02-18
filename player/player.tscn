@@ -149,7 +149,7 @@ animations = [{
 size = Vector2(259, 436)
 
 [node name="player" type="CharacterBody2D" unique_id=256829301]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_2uvqg")
 metadata/_edit_group_ = true
 
@@ -160,11 +160,12 @@ sprite_frames = SubResource("SpriteFrames_l3lcn")
 animation = &"run"
 
 [node name="col_player" type="CollisionShape2D" parent="." unique_id=841163505]
-position = Vector2(13.5, 30)
+position = Vector2(13.499999, 29.999996)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_xry5e")
 
 [node name="cam_player" type="Camera2D" parent="." unique_id=1510237096]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_bottom = 648
 limit_smoothed = true

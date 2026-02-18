@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 @export var gravity_scale = 2
-@export var speed = 500
+@export var speed = 250
 @export var acceleration = 600
 @export var friction = 1500
 @export var jump_force = -700
 @export var air_acceleration = 2000
-@export var air_friction = 700
+@export var air_friction = 450
+
+
+# Contador de monedas
+var monedas: int = 0
 
 @onready var ani_player = $ani_player
 
@@ -55,3 +59,12 @@ func _physics_process(delta: float) -> void:
 	handle_air_acceleration(input_axis, delta)
 	update_animation(input_axis)
 	move_and_slide()
+
+# Agregamos al player al grupo de jugadores
+func _ready() -> void:
+	add_to_group("jugadores")
+
+
+# Agrega una moneda al contador del jugador
+func add_moneda():
+	monedas+=1

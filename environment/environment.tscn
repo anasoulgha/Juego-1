@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfa60tkddvpko" path="res://environment/floor.tscn" id="1_8a1ph"]
 [ext_resource type="PackedScene" uid="uid://cghyhe3usmepk" path="res://player/player.tscn" id="2_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://cadia23v4evvu" path="res://fondo/fondo.tscn" id="3_wjl7u"]
+[ext_resource type="PackedScene" uid="uid://p2dhk7km8u7r" path="res://coleccionables/coleccionable.tscn" id="4_7uceq"]
 
 [node name="Environment" type="Node2D" unique_id=977511654]
 
@@ -13,3 +14,23 @@ position = Vector2(75, 529)
 position = Vector2(-3, 590)
 
 [node name="Fondo" parent="." unique_id=1462426255 instance=ExtResource("3_wjl7u")]
+
+[node name="monedas" type="Node2D" parent="." unique_id=1013691537]
+
+[node name="moneda1" parent="monedas" unique_id=844228677 instance=ExtResource("4_7uceq")]
+position = Vector2(1218, 313)
+
+[node name="moneda2" parent="monedas" unique_id=964477602 instance=ExtResource("4_7uceq")]
+position = Vector2(492, 556)
+
+[node name="moneda3" parent="monedas" unique_id=106965370 instance=ExtResource("4_7uceq")]
+position = Vector2(2486, 386)
+
+[node name="moneda4" parent="monedas" unique_id=843833792 instance=ExtResource("4_7uceq")]
+position = Vector2(4145, 129)
+
+[node name="moneda5" parent="monedas" unique_id=756882605 instance=ExtResource("4_7uceq")]
+position = Vector2(4460, 414)
+
+[node name="moneda6" parent="monedas" unique_id=1357018645 instance=ExtResource("4_7uceq")]
+position = Vector2(5090, 531)
