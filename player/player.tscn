@@ -224,7 +224,6 @@ limit_smoothed = true
 [node name="Contador" parent="CanvasLayer" unique_id=173996930 instance=ExtResource("32_1s1yo")]
 
 [node name="tiempo" type="Timer" parent="." unique_id=1632608468]
-wait_time = 3.0
 one_shot = true
 
 [node name="audio_player" type="AudioStreamPlayer2D" parent="." unique_id=1106885135]
