@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://cghyhe3usmepk" path="res://player/player.tscn" id="2_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://cadia23v4evvu" path="res://fondo/fondo.tscn" id="3_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://p2dhk7km8u7r" path="res://coleccionables/coleccionable.tscn" id="4_7uceq"]
+[ext_resource type="PackedScene" uid="uid://di3ct6ur6wk6w" path="res://ene_static/cactus.tscn" id="6_ehb6n"]
+[ext_resource type="PackedScene" uid="uid://dga0x3lfc82sx" path="res://ene_dyn/ene_dyn_zombie.tscn" id="6_vh8kr"]
 
 [node name="Environment" type="Node2D" unique_id=977511654]
 
 [node name="player" parent="." unique_id=256829301 instance=ExtResource("2_wjl7u")]
-position = Vector2(75, 529)
+position = Vector2(68, 565)
 
 [node name="floor" parent="." unique_id=1130278175 instance=ExtResource("1_8a1ph")]
 position = Vector2(-3, 590)
@@ -34,3 +36,26 @@ position = Vector2(4460, 414)
 
 [node name="moneda6" parent="monedas" unique_id=1357018645 instance=ExtResource("4_7uceq")]
 position = Vector2(5090, 531)
+
+[node name="enemigos" type="Node2D" parent="." unique_id=1689610467]
+
+[node name="Cactus1" parent="enemigos" unique_id=437262342 instance=ExtResource("6_ehb6n")]
+position = Vector2(253, 566)
+
+[node name="Cactus22" parent="enemigos" unique_id=1166130723 instance=ExtResource("6_ehb6n")]
+position = Vector2(1648, 400)
+
+[node name="Cactus" parent="enemigos" unique_id=1656393381 instance=ExtResource("6_ehb6n")]
+position = Vector2(2604, 541)
+
+[node name="enemigo1" parent="enemigos" unique_id=2124166490 instance=ExtResource("6_vh8kr")]
+position = Vector2(1750, 565)
+
+[node name="enemigo2" parent="enemigos" unique_id=1632348900 instance=ExtResource("6_vh8kr")]
+position = Vector2(1202, 562)
+
+[node name="enemigo3" parent="enemigos" unique_id=1122071249 instance=ExtResource("6_vh8kr")]
+position = Vector2(4116, 538)
+
+[node name="enemigo4" parent="enemigos" unique_id=1643865036 instance=ExtResource("6_vh8kr")]
+position = Vector2(3372, 442)

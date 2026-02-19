@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://di3ct6ur6wk6w"]
+
+[ext_resource type="Script" uid="uid://b1175ujgdgavi" path="res://ene_static/cactus.gd" id="1_qfbg3"]
+[ext_resource type="Texture2D" uid="uid://c43jr8tm7s063" path="res://ene_static/img/cactus.png" id="2_1iv34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vejwk"]
+size = Vector2(342, 482)
+
+[node name="Cactus" type="Area2D" unique_id=437262342]
+script = ExtResource("1_qfbg3")
+
+[node name="spr_catus" type="Sprite2D" parent="." unique_id=1324569175]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_1iv34")
+
+[node name="col_catus" type="CollisionShape2D" parent="." unique_id=839988772]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_vejwk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

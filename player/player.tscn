@@ -22,16 +22,27 @@
 [ext_resource type="Texture2D" uid="uid://dm6fqkwmx0k2t" path="res://player/img/Jump__008.png" id="19_mmwog"]
 [ext_resource type="Texture2D" uid="uid://bjraf866iy04e" path="res://player/img/Jump__009.png" id="20_8pxes"]
 [ext_resource type="Texture2D" uid="uid://ckdbrqirrt0al" path="res://player/img/Run__000.png" id="21_fmu53"]
+[ext_resource type="Texture2D" uid="uid://vsyhb02111hl" path="res://player/img/Dead__000.png" id="22_fjxoa"]
 [ext_resource type="Texture2D" uid="uid://ccfy8r66x5m0o" path="res://player/img/Run__001.png" id="22_w7j2h"]
+[ext_resource type="Texture2D" uid="uid://b2cgiiguaaatm" path="res://player/img/Dead__001.png" id="23_gswnw"]
 [ext_resource type="Texture2D" uid="uid://cdgfxlhmf43x0" path="res://player/img/Run__002.png" id="23_n0b8q"]
 [ext_resource type="Texture2D" uid="uid://cxaa8pcqxp2kk" path="res://player/img/Run__003.png" id="24_jfgyi"]
+[ext_resource type="Texture2D" uid="uid://cb7j3d3km1mu" path="res://player/img/Dead__002.png" id="24_xcnuv"]
 [ext_resource type="Texture2D" uid="uid://b03suqn2jiog" path="res://player/img/Run__004.png" id="25_237xx"]
+[ext_resource type="Texture2D" uid="uid://ku7kn50x63je" path="res://player/img/Dead__003.png" id="25_j55il"]
+[ext_resource type="Texture2D" uid="uid://brfcwedh3vd3e" path="res://player/img/Dead__004.png" id="26_hjies"]
 [ext_resource type="Texture2D" uid="uid://c2k7qjnsme65d" path="res://player/img/Run__005.png" id="26_wpyo2"]
 [ext_resource type="Texture2D" uid="uid://dstv1wvhlsy2w" path="res://player/img/Run__006.png" id="27_7crtr"]
+[ext_resource type="Texture2D" uid="uid://ct0ixe53hrx7v" path="res://player/img/Dead__005.png" id="27_mmwog"]
+[ext_resource type="Texture2D" uid="uid://cqwv7a8fh8jqx" path="res://player/img/Dead__006.png" id="28_8pxes"]
 [ext_resource type="Texture2D" uid="uid://dl7wyfhdnok2r" path="res://player/img/Run__007.png" id="28_vgvch"]
 [ext_resource type="Texture2D" uid="uid://cjrqxsyeipbuq" path="res://player/img/Run__008.png" id="29_a1u5o"]
+[ext_resource type="Texture2D" uid="uid://c1pab45dotwsj" path="res://player/img/Dead__007.png" id="29_fmu53"]
 [ext_resource type="Texture2D" uid="uid://ub7pmlmv4vqo" path="res://player/img/Run__009.png" id="30_3dxkp"]
+[ext_resource type="Texture2D" uid="uid://ytb3evg81tnf" path="res://player/img/Dead__008.png" id="30_w7j2h"]
+[ext_resource type="Texture2D" uid="uid://87dw0tinanpu" path="res://player/img/Dead__009.png" id="31_n0b8q"]
 [ext_resource type="PackedScene" uid="uid://bkxri6bkv7xpu" path="res://contador/contador.tscn" id="32_1s1yo"]
+[ext_resource type="AudioStream" uid="uid://bsdcyrh2n1xt3" path="res://player/gameover.mp3" id="43_jfgyi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l3lcn"]
 animations = [{
@@ -112,6 +123,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("22_fjxoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gswnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xcnuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_j55il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hjies")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mmwog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8pxes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fmu53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_w7j2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_n0b8q")
+}],
+"loop": false,
+"name": &"muerte",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("21_fmu53")
 }, {
 "duration": 1.0,
@@ -158,7 +204,9 @@ metadata/_edit_group_ = true
 position = Vector2(12.5, 29.5)
 scale = Vector2(0.9137931, 0.882)
 sprite_frames = SubResource("SpriteFrames_l3lcn")
-animation = &"run"
+animation = &"muerte"
+frame = 9
+frame_progress = 1.0
 
 [node name="col_player" type="CollisionShape2D" parent="." unique_id=841163505]
 position = Vector2(13.499999, 29.999996)
@@ -174,3 +222,10 @@ limit_smoothed = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=738887898]
 
 [node name="Contador" parent="CanvasLayer" unique_id=173996930 instance=ExtResource("32_1s1yo")]
+
+[node name="tiempo" type="Timer" parent="." unique_id=1632608468]
+wait_time = 3.0
+one_shot = true
+
+[node name="audio_player" type="AudioStreamPlayer2D" parent="." unique_id=1106885135]
+stream = ExtResource("43_jfgyi")
